@@ -1,26 +1,29 @@
 # Nexanix Smart Assistant
 
-A self-contained simulated Alexa+ web experience for the Build, Ship, Shape: Amazon Developer Hackathon.
+A simulated Alexa+ web experience for the Build, Ship, Shape: Amazon Developer Hackathon.
 
-## What it demonstrates
-A conversational agentic-style home/personal workflow. Natural-language requests are routed to local tools:
-- `get_calendar`
+## What is actually implemented
+The browser runs a local agent runtime in JavaScript. The agent interprets natural-language requests and **executes stateful tools**:
+
 - `add_to_shopping_list`
-- `create_home_routine`
 - `schedule_calendar_event`
+- `get_calendar`
+- `create_home_routine`
+- `get_shopping_list`
 
-The UI shows the request, response, and tool calls.
+Tool results update the live application state. A later request can read the state created by an earlier request.
 
-## Alexa+ track approach
-This uses the **simulated Alexa+ experience** path. It does not claim to call Amazon's private Alexa+ developer services. The hackathon rules allow a simulated Alexa+ web experience using a preferred agentic tool.
+## Alexa+ track
+This project uses the hackathon's **simulated Alexa+ experience** path. The official rules allow a web app built with any AI or agentic tool and do not require Alexa+ private SDKs, MCP, or voice input for this path.
 
 ## Run
-Open `index.html` in a browser, or run:
-`python3 -m http.server 8000`
-then open `http://localhost:8000`.
+No API key or external service is required. Open `index.html` in a modern browser. The complete agent logic and stateful tools run in the browser.
 
 ## Demo
-Try: “Prepare movie night for Friday at 8”, then “What's on my calendar today?” and “Add popcorn to my shopping list”.
+1. Ask: `Prepare movie night for Friday at 8`.
+2. Observe three executed tools and the updated calendar/shopping state.
+3. Ask: `What's on my calendar?` and observe the state persisted from the first request.
+4. Ask: `Add popcorn to my shopping list` and observe the shopping state update.
 
-## Important
-This is a simulation using synthetic/local data. It does not control real devices or external services. Describe it honestly as a simulated Alexa+ experience.
+## Limitations
+The tools use synthetic local data. They do not control a real calendar, shopping service, or smart-home device. The experience is intentionally presented as a simulation, consistent with the hackathon's simulated Alexa+ option.

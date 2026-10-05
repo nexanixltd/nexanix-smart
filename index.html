@@ -1,13 +1,5 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nexanix Smart Assistant</title><link rel="stylesheet" href="style.css"></head>
-<body><main class="app">
-<header><div class="brand">NEXANIX</div><div><h1>Smart Assistant</h1><p>Agentic home & personal workflow simulator</p></div><span class="badge">Alexa+ Simulation</span></header>
-<section class="chat" id="chat"><div class="message assistant"><strong>Nexanix</strong><p>Hi! I can coordinate your home routines, calendar, tasks and shopping list. Try <em>“Prepare movie night for Friday at 8”</em>.</p></div></section>
-<section class="suggestions">
-<button data-prompt="Prepare movie night for Friday at 8">Movie night</button>
-<button data-prompt="What's on my calendar today?">Calendar</button>
-<button data-prompt="Add popcorn to my shopping list">Shopping</button>
-<button data-prompt="Create a quiet evening routine">Routine</button></section>
-<form id="composer"><input id="input" autocomplete="off" placeholder="Ask Nexanix to do something..."><button type="submit">Send</button></form>
-</main><script src="app.js"></script></body></html>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nexanix Smart Assistant</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="shell"><header><div class="logo">N</div><div><div class="title">Nexanix Smart Assistant</div><div class="sub">Agentic workflow · Hackathon prototype</div></div><div class="status"><i></i> LIVE</div></header>
+<div class="layout"><section class="conversation"><div id="messages"><div class="msg bot"><div class="who">NEXANIX</div><div>Tell me what you want to get done. I can coordinate your calendar, shopping list, and routines.</div></div></div><div class="quick"><button data-q="Prepare movie night for Friday at 8">🎬 Prepare movie night</button><button data-q="What's on my calendar?">📅 Calendar</button><button data-q="Add popcorn to my shopping list">🛒 Add shopping</button></div><form id="form"><input id="input" placeholder="Ask Nexanix to coordinate something…"><button>Run</button></form></section>
+<aside><h3>Agent execution</h3><div id="trace" class="trace empty">No actions yet</div><h3>Live state</h3><div class="state"><b>Calendar</b><div id="cal">—</div><b>Shopping</b><div id="shop">—</div><b>Routines</b><div id="routine">—</div></div></aside></div>
+<footer>Simulation uses a real local agent endpoint and stateful tool execution. No external credentials required.</footer></div><script src="app.js"></script></body></html>
